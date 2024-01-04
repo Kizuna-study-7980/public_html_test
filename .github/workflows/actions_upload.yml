@@ -18,4 +18,4 @@ jobs:
             username: ${{ secrets.USERNAME }}                    # FTPのユーザー名名
             password: ${{ secrets.PASSWORD }}                    # FTPのパスワード
             local-dir: ./                                        # アップロードしたいファイルのパス
-            server-dir: /study7980.cloudfree.jp/public_html      # アップロード先のリモートパス
+            server-dir: /study7980.cloudfree.jp/public_html/     # アップロード先のリモートパス
