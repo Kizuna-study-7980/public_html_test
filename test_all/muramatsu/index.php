@@ -1,6 +1,5 @@
 <?php
 // サーバのベースURL
-// テスト用コメント追加（後ほど削除推奨）
 $url_base = "https://study7980.cloudfree.jp/";
 // ディレクトリのパスからURLを取得する処理（取得したい文字が検索文字より後にある場合）
 $directory_path = dirname(__FILE__);
