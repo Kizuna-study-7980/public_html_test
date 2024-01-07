@@ -2,8 +2,7 @@ name: Upload
 
 on:                       # トリガーの設定
   push:                   # プッシュ時に実行
-    branches: [master]    # ブランチの指定
-      
+    branches: [master]    # ブランチの指定      
 jobs:
   FTP-Upload-Action:
     name: FTP-Upload-Action   # ジョブの名前
@@ -19,3 +18,23 @@ jobs:
             password: ${{ secrets.PASSWORD }}                    # FTPのパスワード
             local-dir: ./                                        # アップロードしたいファイルのパス
             server-dir: /study7980.cloudfree.jp/public_html/     # アップロード先のリモートパス
+
+# 個人環境用のアップロードアクション
+on:
+  push:
+    branches: [develop_tm]
+jobs:
+  FTP-Upload-Action:
+    name: FTP-Upload-Action
+    runs-on: ubuntu-latest
+    steps:
+        - name: checkout
+          uses: actions/checkout@v2
+        - name: FTP-Deploy-Action
+          uses: SamKirkland/FTP-Deploy-Action@4.2.0
+          with:
+            server: ${{ secrets.SERVER }}
+            username: ${{ secrets.USERNAME }}
+            password: ${{ secrets.PASSWORD }}
+            local-dir: ./test_all/muramatsu/
+            server-dir: /study7980.cloudfree.jp/public_html/test_all/muramatsu/
