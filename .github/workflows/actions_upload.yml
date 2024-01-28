@@ -18,8 +18,3 @@ jobs:
             password: ${{ secrets.PASSWORD }}                    # FTPのパスワード
             local-dir: ./                                        # アップロードしたいファイルのパス
             server-dir: /study7980.cloudfree.jp/public_html/     # アップロード先のリモートパス
-            exclude: |
-              **/.git*
-              **/.git*/**
-              **/node_modules/**
-              **/test_all/**
